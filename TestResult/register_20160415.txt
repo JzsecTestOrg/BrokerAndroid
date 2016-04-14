@@ -1,0 +1,48 @@
+2016-04-15 00:42:21: module-init 真机启动成功
+2016-04-15 00:42:21: module-welcome 欢迎页面点击登录
+2016-04-15 00:42:21: module-register *******现在开始执行模块【register】的第【37】条用例*******
+2016-04-15 00:42:21: module-register 手机号 15210262168 已注册
+2016-04-15 00:42:23: module-register 登录页面正确显示
+2016-04-15 00:42:23: module-register 点击注册按钮
+2016-04-15 00:42:24: module-register 注册页面正确显示
+2016-04-15 00:42:32: module-register 输入手机号：15210262168
+2016-04-15 00:42:32: module-register 验证码发送中...
+2016-04-15 00:42:42: module-register 验证码发送成功！
+2016-04-15 00:42:44: module-register 点击确定
+2016-04-15 00:42:50: module-register 输入验证码: 618579
+2016-04-15 00:42:56: module-register 输入密码：qaz123
+2016-04-15 00:42:56: module-register 不对密码明暗文进行校验
+2016-04-15 00:43:05: module-register 输入昵称: 1
+2016-04-15 00:43:15: module-register 机构邀请码预填正确：3N1i5
+2016-04-15 00:43:18: module-register 清除邀请码
+2016-04-15 00:43:24: module-register 输入不存在的邀请码：1111
+2016-04-15 00:43:24: module-register 不对经纪宝注册协议勾选进行校验
+2016-04-15 00:43:24: module-register 不对经纪宝注册协议内容校验
+2016-04-15 00:43:24: module-register 不对注册页面的客服电话校验
+2016-04-15 00:43:25: module-register 点击注册按钮
+2016-04-15 00:43:26: module-register 弹框提示正确：您填写的邀请码无效
+2016-04-15 00:43:26: module-register 点击取消
+2016-04-15 00:43:30: module-register 注册页面点击登录按钮
+2016-04-15 00:43:30: module-register *******现在开始执行模块【register】的第【38】条用例*******
+2016-04-15 00:43:30: module-register 手机号 15210262168 已注册
+2016-04-15 00:43:32: module-register 登录页面正确显示
+2016-04-15 00:43:33: module-register 点击注册按钮
+2016-04-15 00:43:33: module-register 注册页面正确显示
+2016-04-15 00:43:41: module-register 输入手机号：15210262168
+2016-04-15 00:43:43: module-register 验证码发送中...
+2016-04-15 00:43:53: module-register 验证码发送成功！
+2016-04-15 00:43:54: module-register 点击确定
+2016-04-15 00:44:00: module-register 输入验证码: 160068
+2016-04-15 00:44:07: module-register 输入密码：qaz123
+2016-04-15 00:44:07: module-register 不对密码明暗文进行校验
+2016-04-15 00:44:16: module-register 输入昵称: 1
+2016-04-15 00:44:25: module-register 机构邀请码预填正确：M0Jfn
+2016-04-15 00:44:29: module-register 清除邀请码
+2016-04-15 00:44:35: module-register 输入个人邀请码：w2lbp
+2016-04-15 00:44:35: module-register 不对经纪宝注册协议勾选进行校验
+2016-04-15 00:44:35: module-register 不对经纪宝注册协议内容校验
+2016-04-15 00:44:35: module-register 不对注册页面的客服电话校验
+2016-04-15 00:44:36: module-register 点击注册按钮
+2016-04-15 00:44:36: module-register 弹框提示正确：您已参与其他活动，无法修改此邀请码
+2016-04-15 00:44:37: module-register 点击取消
+2016-04-15 00:44:38: module-register 注册页面点击登录按钮

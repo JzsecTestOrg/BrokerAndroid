@@ -1,0 +1,35 @@
+2016-04-14 23:56:38: module-init 真机启动成功
+2016-04-14 23:56:38: module-welcome 欢迎页面点击登录
+2016-04-14 23:56:39: module-register 手机号 15501253283 已注册
+2016-04-14 23:56:40: module-register 登录页面正确显示
+2016-04-14 23:56:41: module-register 点击注册按钮
+2016-04-14 23:56:41: module-register 注册页面正确显示
+2016-04-14 23:56:49: module-register 输入手机号：15501253283
+2016-04-14 23:56:50: module-register 验证码发送中...
+2016-04-14 23:57:00: module-register 验证码发送成功！
+2016-04-14 23:57:01: module-register 点击确定
+2016-04-14 23:57:07: module-register 输入验证码: 824171
+2016-04-14 23:57:13: module-register 输入密码：123
+2016-04-14 23:57:13: module-register 不对密码明暗文进行校验
+2016-04-14 23:57:22: module-register 输入昵称: 1
+2016-04-14 23:57:22: module-register 不对邀请码进行校验
+2016-04-14 23:57:22: module-register 不对经纪宝注册协议勾选进行校验
+2016-04-14 23:57:22: module-register 不对经纪宝注册协议内容校验
+2016-04-14 23:57:22: module-register 不对注册页面的客服电话校验
+2016-04-14 23:57:23: module-register 点击注册按钮
+2016-04-14 23:57:54: module-register 控件loginButton未找到
+Traceback (most recent call last):
+  File "/Users/xuwen1/Automation/BrokerAndroid/Elements/registerElements.py", line 170, in loginButton
+    el = WebDriverWait(self.driver, 30).until(EC.presence_of_element_located((By.XPATH, Data.getXpath('register', 'register', 'loginButton', 1))))
+  File "/Library/Python/2.7/site-packages/selenium-2.47.1-py2.7.egg/selenium/webdriver/support/wait.py", line 76, in until
+    raise TimeoutException(message, screen, stacktrace)
+TimeoutException: Message: 
+
+
+2016-04-14 23:57:54: module-register Traceback (most recent call last):
+  File "/Users/xuwen1/Automation/BrokerAndroid/BrokerTest/BrokerTest.py", line 28, in test_register
+    register.register(self, 23)
+  File "/Users/xuwen1/Automation/BrokerAndroid/TestCases/register.py", line 555, in register
+    registerElements.loginButton(self).click()
+AttributeError: 'NoneType' object has no attribute 'click'
+
