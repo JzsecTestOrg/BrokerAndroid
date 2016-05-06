@@ -49,7 +49,7 @@ class Login(unittest.TestCase):
         welcome.welcome(self, 'login')
         globalData.MODULE = 'login'
         try:
-            for i in range(7, Data.getCasenumber('login') + 1):
+            for i in range(4, Data.getCasenumber('login') + 1):
                 globalData.LOG += generateLog.format_log('*******现在开始执行模块【login】的第【' + str(i) + '】条用例*******')
                 login.login(self, i)
             generateLog.generate_log()
@@ -110,7 +110,7 @@ if __name__ == '__main__':
     runner = unittest.TextTestRunner()
     #注册
     try:
-        runner.run(suite()[2])
+        runner.run(suite()[1])
         # screenShot.compareScreenshot()
         # screenShot.mark_result()
         generateReport.generate_report()

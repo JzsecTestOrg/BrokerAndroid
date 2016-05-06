@@ -64,6 +64,8 @@ def login(self, i):
 
     #进入登录页面校验
     try:
+        if(i == 4):
+            self.driver.keyevent(4)
         if(loginElements.loginPage(self)):
             globalData.LOG += generateLog.format_log('登录页面正确显示')
     except:
@@ -138,10 +140,10 @@ def login(self, i):
                 try:
                     if(loginElements.popupText(self).get_attribute('name') == Data.getTestdata('login', i, 9)):
                         globalData.LOG += generateLog.format_log('弹框提示正确：' + Data.getTestdata('login', i, 9))
-                        if(i != 4):
-                            loginElements.confirmButton(self).click()
-                        else:
-                            loginElements.popupText(self).click()
+                        # if(i != 4):
+                        loginElements.confirmButton(self).click()
+                        # else:
+                        #     loginElements.popupText(self).click()
                         globalData.LOG += generateLog.format_log('点击确定')
                         Data.setExecutionresult(globalData.MODULE, i, 'Pass')
                     else:
