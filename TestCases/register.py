@@ -6,35 +6,19 @@ Simple iOS tests, showing accessing elements and getting/setting text from them.
 
 import time, sys, traceback
 from Elements import registerElements, loginElements, tabElements, mineElements, settingElements, welcomeElements
-from CommonMethods import verCode, globalData, generateLog, Data, userStatus, dataBase, screenShot
+from CommonMethods import redis, globalData, generateLog, Data, userStatus, dataBase, screenShot
 import welcome
 
 
 
-def register_smoking(self, i):
+def register_smoking(self, phone, password, nickname):
     reload(sys)
     sys.setdefaultencoding('utf-8')
-    #经纪宝注册协议验证
-    try:
-        registerElements.protocolLink(self).click()
-        globalData.LOG += generateLog.format_log("注册页面的经纪宝注册协议链接可访问")
-        try:
-            el = registerElements.protocolPage(self)
-            globalData.LOG += generateLog.format_log("经纪宝注册协议页面显示正确")
-        except Exception, e:
-            globalData.LOG += generateLog.format_log("经纪宝注册协议页面显示不正确\n" + traceback.format_exc())
-        try:
-            registerElements.backButton(self).click()
-            globalData.LOG += generateLog.format_log("经纪宝注册协议返回到注册页面")
-        except Exception, e:
-            globalData.LOG += generateLog.format_log("经纪宝注册协议页面的返回按钮无法点击\n" + traceback.format_exc())
-    except Exception, e:
-        globalData.LOG += generateLog.format_log("经纪宝注册协议不可访问")
 
     #注册页面手机号验证
     try:
-        registerElements.phoneText(self).send_keys(Data.getNumber('register', 'register', 'phoneText', i))
-        globalData.LOG += generateLog.format_log("输入注册手机号: " + Data.getNumber('register', 'register', 'phoneText', i))
+        registerElements.phoneText(self).send_keys(str(phone))
+        globalData.LOG += generateLog.format_log("输入注册手机号: " + str(phone))
     except Exception, e:
         globalData.LOG += generateLog.format_log("注册页面手机号输入框错误\n" + traceback.format_exc())
 
@@ -44,13 +28,8 @@ def register_smoking(self, i):
         globalData.LOG += generateLog.format_log("验证码发送中...")
     except Exception, e:
         globalData.LOG += generateLog.format_log("按钮发送验证码识别错误\n" + traceback.format_exc())
-    for i in range(1, 21):
-        if(verCode.registersendVercode(Data.getNumber('register', 'register', 'phoneText', i)) != '0'):
-            time.sleep(5)
-        else:
-            globalData.LOG += generateLog.format_log("验证码发送成功")
-            break
-    code = verCode.registerVercode(Data.getNumber('register', 'register', 'phoneText', 1))
+    time.sleep(5)
+    code = redis.registerVercode(str(phone))
 
     try:
         registerElements.vercodeText(self).send_keys(code)
@@ -58,77 +37,18 @@ def register_smoking(self, i):
     except Exception, e:
         globalData.LOG += generateLog.format_log("注册页面验证码输入框错误\n" + traceback.format_exc())
 
-    #注册密码验证
-    # try:
-    #     registerElements.pswfirstText(self).send_keys(Data.getNumber('register', 'register', 'pswfirstText', 1))
-    #     globalData.LOG += generateLog.format_log("输入密码: " + Data.getNumber('register', 'register', 'pswfirstText', 1))
-    # except Exception, e:
-    #     globalData.LOG += generateLog.format_log("注册页面密码输入框错误\n" + traceback.format_exc())
-    # try:
-    #     registerElements.pswsecondText(self).send_keys(Data.getNumber('register', 'register', 'pswsecondText', 1))
-    #     globalData.LOG += generateLog.format_log("输入确认密码: " + Data.getNumber('register', 'register', 'pswsecondText', 1))
-    # except Exception, e:
-    #     globalData.LOG += generateLog.format_log("注册页面确认密码输入框错误\n" + traceback.format_exc())
-
     try:
-        registerElements.pswfirstSecureText(self).send_keys(Data.getValue('register', 'register', 'pswfirstText', i))
-        globalData.LOG += generateLog.format_log("输入注册密码: " + Data.getValue('register', 'register', 'pswfirstText', i))
-        if(registerElements.pswfirstSecureText(self).text == Data.getValue('register', 'register', 'pswfirstSecureText', 1)):
-            globalData.LOG += generateLog.format_log("密码暗文显示为: " + Data.getValue('register', 'register', 'pswfirstSecureText', 1))
-        else:
-            globalData.LOG += generateLog.format_log("密码暗文显示错误: " + registerElements.pswfirstSecureText(self).text)
+        registerElements.pswfirstSecureText(self).send_keys(str(password))
+        globalData.LOG += generateLog.format_log("输入注册密码: " + str(password))
     except Exception, e:
         globalData.LOG += generateLog.format_log("注册页面密码输入框错误\n" + traceback.format_exc())
-    try:
-        registerElements.eyecloseButton(self).click()
-        globalData.LOG += generateLog.format_log("切换密码为明文: " + Data.getValue('register', 'register', 'pswfirstText', i))
-        if(registerElements.pswfirstText(self).text == Data.getValue('register', 'register', 'pswfirstText', i)):
-            globalData.LOG += generateLog.format_log("密码明文显示为: " + Data.getValue('register', 'register', 'pswfirstText', i))
-        else:
-            globalData.LOG += generateLog.format_log("密码明文显示错误: " + registerElements.pswfirstText(self).text)
-    except Exception, e:
-        globalData.LOG += generateLog.format_log("登录页面密码切换明文按钮错误\n" + traceback.format_exc())
-    try:
-        registerElements.eyeopenButton(self).click()
-        globalData.LOG += generateLog.format_log("切换密码为暗文: " + Data.getValue('register', 'register', 'pswfirstSecureText', 1))
-        if(registerElements.pswfirstSecureText(self).text == Data.getValue('register', 'register', 'pswfirstSecureText', 1)):
-            globalData.LOG += generateLog.format_log("密码暗文显示为: " + Data.getValue('register', 'register', 'pswfirstSecureText', 1))
-        else:
-            globalData.LOG += generateLog.format_log("密码暗文显示错误: " + registerElements.pswfirstSecureText(self).text)
-    except Exception, e:
-        globalData.LOG += generateLog.format_log("登录页面密码切换暗文按钮错误\n" + traceback.format_exc())
-
-
 
     #注册昵称验证
     try:
-        registerElements.nicknameText(self).send_keys(unicode(Data.getValue('register', 'register', 'nicknameText', 1), 'utf-8'))
+        registerElements.nicknameText(self).send_keys(unicode(str(nickname), 'utf-8'))
         globalData.LOG += generateLog.format_log("输入昵称: " + Data.getValue('register', 'register', 'nicknameText', 1))
     except Exception, e:
         globalData.LOG += generateLog.format_log("注册页面昵称输入框错误\n" + traceback.format_exc())
-
-    #验证邀请码
-    try:
-        registerElements.invitecodeText(self).clear()
-        registerElements.invitecodeText(self).send_keys(Data.getValue('register', 'register', 'invitecodeText', 1))
-        globalData.LOG += generateLog.format_log("输入邀请码: " + Data.getValue('register', 'register', 'invitecodeText', 1))
-    except Exception, e:
-        globalData.LOG += generateLog.format_log("注册页面邀请码输入框错误\n" + traceback.format_exc())
-
-
-    #阅读经纪宝注册协议验证
-    try:
-        registerElements.protocolCheckbox(self).click()
-        globalData.LOG += generateLog.format_log("不勾选经纪宝注册协议")
-        registerElements.protocolCheckbox(self).click()
-        globalData.LOG += generateLog.format_log("勾选经纪宝注册协议")
-    except Exception, e:
-        globalData.LOG += generateLog.format_log("阅读经纪宝注册协议勾选框错误\n" + traceback.format_exc())
-    try:
-        el = registerElements.protocolChecked(self)
-        globalData.LOG += generateLog.format_log("确认勾选经纪宝注册协议")
-    except Exception, e:
-        globalData.LOG += generateLog.format_log("勾选经纪宝注册协议失败")
 
     #注册页面注册按钮验证
     try:
@@ -142,7 +62,7 @@ def register_smoking(self, i):
         el = tabElements.customerTab(self)
         globalData.LOG += generateLog.format_log("注册完成页面正确显示")
     except Exception, e:
-        globalData.LOG += generateLog.format_log("注册完成页面未显示\n" + traceback.format_exc())()
+        globalData.LOG += generateLog.format_log("注册完成页面未显示\n" + traceback.format_exc())
 
 
 def register(self, i):
@@ -155,7 +75,7 @@ def register(self, i):
     else:
         if(userStatus.isRegisterSuccess(Data.getTestdata('register', i, 2)) == True):
             dataBase.del_buser(Data.getTestdata('register', i, 2))
-    verCode.clear_vercode(Data.getTestdata('register', i, 2))
+    redis.clear_vercode(Data.getTestdata('register', i, 2))
 
 
     #进入注册页面校验
@@ -211,7 +131,7 @@ def register(self, i):
         globalData.LOG += generateLog.format_log('验证码发送成功！')
         registerElements.confirmButton(self).click()
         globalData.LOG += generateLog.format_log('点击确定')
-        code = verCode.registerVercode(Data.getTestdata('register', i, 2))
+        code = redis.registerVercode(Data.getTestdata('register', i, 2))
         registerElements.vercodeText(self).send_keys(code)
         globalData.LOG += generateLog.format_log("输入验证码: " + code)
     elif(Data.getTestdata('register', i, 15) == '6位错误的验证码'):
@@ -231,8 +151,8 @@ def register(self, i):
         globalData.LOG += generateLog.format_log('验证码发送成功！')
         registerElements.confirmButton(self).click()
         globalData.LOG += generateLog.format_log('点击确定')
-        code = verCode.registerVercode(Data.getTestdata('register', i, 2))
-        verCode.expireregisterVercode(Data.getTestdata('register', i, 2))
+        code = redis.registerVercode(Data.getTestdata('register', i, 2))
+        redis.expireregisterVercode(Data.getTestdata('register', i, 2))
         registerElements.vercodeText(self).send_keys(code)
         globalData.LOG += generateLog.format_log("输入验证码: " + code)
     elif(Data.getTestdata('register', i, 15) == '使用过的验证码'):
@@ -245,7 +165,7 @@ def register(self, i):
         globalData.LOG += generateLog.format_log('验证码发送成功！')
         registerElements.confirmButton(self).click()
         globalData.LOG += generateLog.format_log('点击确定')
-        code = verCode.registerVercode(Data.getTestdata('register', 10, 2))
+        code = redis.registerVercode(Data.getTestdata('register', 10, 2))
         registerElements.vercodeText(self).send_keys(code)
         globalData.LOG += generateLog.format_log("输入验证码: " + code)
         registerElements.cipherpasswordText(self).send_keys(Data.getTestdata('register', 10, 4))
@@ -268,7 +188,7 @@ def register(self, i):
         globalData.LOG += generateLog.format_log('登录页面点击注册按钮')
         registerElements.phoneText(self).send_keys(Data.getTestdata('register', i, 2))
         globalData.LOG += generateLog.format_log('输入手机号：' + Data.getTestdata('register', i, 2))
-        verCode.expireregisterVercode(Data.getTestdata('register', i, 2))
+        redis.expireregisterVercode(Data.getTestdata('register', i, 2))
         registerElements.vercodeText(self).send_keys(code)
         globalData.LOG += generateLog.format_log('输入已经用过的验证码：' + code)
     elif(Data.getTestdata('register', i, 15) == '超过60s重新触发发送验证码'):
@@ -286,7 +206,7 @@ def register(self, i):
             globalData.LOG += generateLog.format_log('验证码发送完成60s后发送验证码按钮文案显示正确：发送验证码')
         else:
             globalData.LOG += generateLog.format_log('验证码发送完成60s后发送验证码按钮文案显示错误：' + registerElements.vercodeButton(self).get_attribute('name'))
-        verCode.clear_vercode(Data.getNumber('register', 'register', 'phoneText', i))
+        redis.clear_vercode(Data.getNumber('register', 'register', 'phoneText', i))
         globalData.LOG += generateLog.format_log('清除redis验证码缓存')
         registerElements.vercodeButton(self).click()
         globalData.LOG += generateLog.format_log("验证码发送中...")

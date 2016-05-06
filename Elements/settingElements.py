@@ -6,10 +6,11 @@ from CommonMethods import Data, globalData, generateLog
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-import traceback
+import traceback, time
 
 def settingButton(self):
     try:
+        time.sleep(1)
         el = WebDriverWait(self.driver, 30).until(EC.presence_of_element_located((By.XPATH, Data.getXpath('setting', 'mine', 'settingButton', 1))))
         return el
     except:

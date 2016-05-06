@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 __author__ = 'xuwen'
 
-from selenium import webdriver
+from appium import webdriver
 import globalData, generateLog
 import traceback
 import os

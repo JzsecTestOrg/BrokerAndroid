@@ -864,70 +864,6 @@ def trade_commission(phone, broker):
         session.commit()
 
 
-    # session.execute("delete from trade_commission_bal where bid = \'" + bid + "\'")
-    # session.commit()
-    # # session.execute("insert into trade_commission_bal VALUES (NULL, \'" + tradetime1 + "\', '2', '1000', '0', \'" + cust_id[1] + "\', \'" + name[1] + "\', \'" + bid + "\', '1234.56000', '0.00000', '1234.56000', '1234.56000', '9.72000', '0.00000', '9.72000', '9.72000', '0.00000', '0.00000', '0.00000', '0.00000', '3.24750', '0.16243', '0.90852', '15.00000', '0.00000', '15.00000', '15.00000', '0')")
-    # # session.commit()
-    # # print cust_id[0]
-    # # session.execute("INSERT INTO trade_commission_bal VALUES (NULL, '20151208', '2', '1274', '0', \'" + cust_id[0] + "', '马会庆 ', 'ac422170f94a9455c3bd4150bda0ba25', '22120.00000', '2160354.88000', '2182474.88000', '702973.88000', '33.18000', '2925.11000', '2958.29000', '1054.47000', '31.22000', '2757.35000', '2788.57000', '995.91000', '3.31800', '0.52259', '1.68720', '27.65221', '2677.65178', '2705.30399', '878.79616', '0')")
-    # session.execute("INSERT INTO trade_commission_bal VALUES (NULL, \'" + tradetime0 + "\', '2', '1000', '0', \'" + cust_id[0] + "\', \'" + name[0] + "\', \'" + bid + "\', '7890.12000', '1234.56000', '9124.68000', '9124.68000', '9.72000', '9.72000', '19.44000', '9.72000', '0.00000', '0.00000', '0.00000', '0.00000', '3.24750', '0.16243', '0.90852', '15.00000', '15.00000', '30.00000', '15.00000', '0')")
-    # session.commit()
-    # session.execute("delete from trade_commission where bid = \'" + bid + "\'")
-    # session.commit()
-    # session.execute("insert into trade_commission VALUES (NULL, \'" + tradetime0 + "\', '2', '1000', '0', \'" + cust_id[1] + "\', \'" + name[1] + "\', \'" + bid + "\', '7890.12000', '1234.56000', '9124.68000', '9124.68000', '9.72000', '9.72000', '19.44000', '9.72000', '0.00000', '0.00000', '0.00000', '0.00000', '3.24750', '0.16243', '0.90852', '15.00000', '15.00000', '30.00000', '15.00000', '0')")
-    # session.commit()
-    # session.execute("INSERT INTO trade_commission VALUES (NULL, \'" + tradetime1 + "\', '2', '1000', '0', \'" + cust_id[0] + "\', \'" + name[0] + "\', \'" + bid + "\', '1234.56000', '0.00000', '1234.56000', '1234.56000', '9.72000', '0.00000', '9.72000', '9.72000', '0.00000', '0.00000', '0.00000', '0.00000', '3.24750', '0.16243', '0.90852', '15.00000', '0.00000', '15.00000', '15.00000', '0')")
-    # session.commit()
-    # session.execute("delete from trade_month_clear WHERE bid = \'" + bid + "\'")
-    # session.commit()
-    # session.execute("INSERT INTO trade_month_clear VALUES (NULL, \'" + thismonth + "\', \'" + bid + "\', '9124.68000', '0.00000', '9124.68000', '8000.00000', '0.00000', '8000.00000', '0', '8000.00000', '8000.00000', '1.0000', '20.00000', '30.00000', '7950.00000', '800.00000', '0.00000', '800.00000', '7150.00000', '0.00000', '7150.00000', '200.00000', '0.00000', '200.00000', '3456.00000', '0.00000', '3456.00000', '3656.00000', '13.00000', '20.00000', '3623.00000', '0.00000', '3623.00000', '10773.00000', '0.00000', '10773.00000', '0')")
-    # session.commit()
-    # session.execute("delete from b_user where bid in ('6b4f9f85012b304979c94ac5e3530b12', '6b4f9f85012b304979c94ac5e3530b13')")
-    # session.commit()
-    # session.execute("INSERT INTO b_user VALUES (NULL, '6b4f9f85012b304979c94ac5e3530b12', '被推荐者甲', '1', '汉', '0000-00-00 00:00:00', '2011-02-18 00:00:00', '2031-02-18 00:00:00', '阳江市公安局', '310108197801134859', '上海市杨浦区政立路1585弄36号302室', '', '', '', 'd439b49d158c3424a623c3cc22a4f3c0', '', '13200000001', '0.0015', 'e10adc3949ba59abbe56e057f20f883e', '0', '2010', '', '4', '4', '2015-09-10 17:54:52', '2015-09-18 14:57:37', '', '123456', '123456', '123456', '0', '', '0', '861770969@qq.com', '上海市杨浦区政立路1585弄36号302室', 'd6a0078df5f56793f0fbb5babcc631f5', 'd6a0078df5f56793f0fbb5babcc631f5', '0', '0', '0', '', '1', '2', '2', '1', '2', '被推荐者甲', '', '0', '', 'kingbroker_6b4f9f85012b304979c94ac5e3530b12', '0', '0')")
-    # session.commit()
-    # session.execute("INSERT INTO b_user VALUES (NULL, '6b4f9f85012b304979c94ac5e3530b13', '被推荐者乙', '1', '汉', '0000-00-00 00:00:00', '2011-02-18 00:00:00', '2031-02-18 00:00:00', '阳江市公安局', '310108197801134859', '上海市杨浦区政立路1585弄36号302室', '', '', '', 'd439b49d158c3424a623c3cc22a4f3c0', '', '13200000002', '0.0015', 'e10adc3949ba59abbe56e057f20f883e', '0', '2010', '', '4', '4', '2015-09-10 17:54:52', '2015-09-18 14:57:37', '', '123456', '123456', '123456', '0', '', '0', '861770969@qq.com', '上海市杨浦区政立路1585弄36号302室', 'd6a0078df5f56793f0fbb5babcc631f5', 'd6a0078df5f56793f0fbb5babcc631f5', '0', '0', '0', '', '1', '2', '2', '1', '2', '被推荐者乙', '', '0', '', 'kingbroker_6b4f9f85012b304979c94ac5e3530b13', '0', '0')")
-    # session.commit()
-    # session.execute("delete from trade_fund_change WHERE change_person = \'" + bid + "\'")
-    # session.commit()
-    # session.execute("INSERT INTO trade_fund_change VALUES (NULL, \'" + now + "\', '100', \'" + bid + "\', 'bb', '6b4f9f85012b304979c94ac5e3530b12', '1', '0')")
-    # session.commit()
-    # session.execute("INSERT INTO trade_fund_change VALUES (NULL, \'" + now + "\', '100', \'" + bid + "\', 'bb', '6b4f9f85012b304979c94ac5e3530b13', '1', '0')")
-    # session.commit()
-    # session.execute("delete from trade_recommand_award_bal where recommand_person = \'" + bid + "\'")
-    # session.commit()
-    #
-    #
-    # # session.execute("INSERT INTO trade_recommand_award_bal VALUES (NULL, NULL, \'" + now + "\', '100.00000', '0.00000', '100.00000', \'" + bid + "\', '6b4f9f85012b304979c94ac5e3530b12', '100.00000')")
-    # # session.commit()
-    #
-    #
-    # session.execute("INSERT INTO trade_recommand_award_bal VALUES (NULL, NULL, \'" + now + "\', NULL, '100.00000', '100.00000', '200.00000', \'" + bid + "\', '6b4f9f85012b304979c94ac5e3530b13', '200.00000')")
-    # session.commit()
-    # session.execute("delete from trade_recommand_award where recommand_person = \'" + bid + "\'")
-    # session.commit()
-    # session.execute("INSERT INTO trade_recommand_award VALUES (NULL, NULL, \'" + now + "\', NULL, '100.00000', '0.00000', '100.00000', \'" + bid + "\', '6b4f9f85012b304979c94ac5e3530b12', '100.00000')")
-    # session.commit()
-    # session.execute("INSERT INTO trade_recommand_award VALUES (NULL, NULL, \'" + now + "\', NULL, '100.00000', '100.00000', '200.00000', \'" + bid + "\', '6b4f9f85012b304979c94ac5e3530b13', '200.00000')")
-    # session.commit()
-    # session.execute("delete from trade_security_guard where bid = \'" + bid + "\'")
-    # session.commit()
-    # session.execute("INSERT INTO trade_security_guard VALUES (NULL, \'" + bid + "\', '800.00000', '0', '0.00000', '800.00000', '0.00000', '0.00000', '0.00000', '1970-01-01 08:00:00', '0', '50000.00000', \'" + str(thismonth) +"month payment add sg_fund', \'" + str(thismonth) +"month payment', '0.00000', '', \'" + now +"\', \'" + now + "\')")
-    # session.commit()
-    # session.execute("delete from trade_continuous_commission WHERE recommand_bid = \'" + bid + "\'")
-    # session.commit()
-    # session.execute("INSERT INTO trade_continuous_commission VALUES (NULL, '0', \'" + tradetime0 + "\', \'" + cust_id[0] + "\', 'd3b36dbdb13f68f029ae0fbc6736d771', \'" + bid + "\', '789352.00000', '0.00000', '789352.00000', '789352.00000', '0.00000', '789352.00000', \'" + now + "\')")
-    # session.commit()
-    # session.execute("INSERT INTO trade_continuous_commission VALUES (NULL, '0', \'" + tradetime1 + "\', \'" + cust_id[1] + "\', 'd3b36dbdb13f68f029ae0fbc6736d772', \'" + bid + "\', '120000.00000', '0.00000', '120000.00000', '120000.00000', '0.00000', '120000.00000', \'" + now + "\')")
-    # session.commit()
-    # session.execute("delete from trade_continuous_commission_bal WHERE recommand_bid = \'" + bid + "\'")
-    # session.commit()
-    # session.execute("INSERT INTO trade_continuous_commission_bal VALUES (NULL, '0', \'" + tradetime0 + "\', \'" + cust_id[0] + "\', 'd3b36dbdb13f68f029ae0fbc6736d771', \'" + bid + "\', '789352.00000', '0.00000', '789352.00000', '789352.00000', '0.00000', '789352.00000', \'" + now + "\')")
-    # session.commit()
-    # session.execute("INSERT INTO trade_continuous_commission_bal VALUES (NULL, '0', \'" + tradetime1 + "\', \'" + cust_id[1] + "\', 'd3b36dbdb13f68f029ae0fbc6736d772', \'" + bid + "\', '120000.00000', '0.00000', '120000.00000', '120000.00000', '0.00000', '120000.00000', \'" + now + "\')")
-    # session.commit()
-    # session.close()
-
 #构造推荐列表
 def share_relation(phone):
     session = db_session()
@@ -1237,9 +1173,9 @@ def insert_buser(phone):
     session.commit()
     session.execute("INSERT INTO b_user_contract VALUES (NULL, '00000000000000000000000000000000', '6b4f9f85012b304979c94" + str(phone) + "\', NULL, NULL, '2000-01-01 00:00:00', '2020-10-13 00:00:00', '4', NULL, NULL, NULL, '2000-01-01 16:33:36', NULL, NULL, '0000-00-00 00:00:00', NULL, '0', '0', '1', '2015-10-15 16:33:36', '2015-10-15 16:33:36')")
     session.commit()
-    session.execute("INSERT INTO sys_user_role VALUES (NULL, '2', '6b4f9f85012b304979c94" + str(phone) + "\', '21', '1', '2016-01-20 14:39:24', '2016-01-20 14:39:24')")
+    session.execute("INSERT INTO sys_user_role VALUES (NULL, '2', '6b4f9f85012b304979c94" + str(phone) + "\', '21', '1', '0', '2016-01-20 14:39:24', '2016-01-20 14:39:24')")
     session.commit()
-    session.execute("INSERT INTO b_user VALUES (NULL, '6b4f9f85012b304979c94" + str(phone) + "\', '推荐', '1', '汉', '0000-00-00 00:00:00', '2011-02-18 00:00:00', '2031-02-18 00:00:00', '阳江市公安局', '310108197801134859', '上海市杨浦区政立路1585弄36号302室', '', '', '', 'd439b49d158c3424a623c3cc22a4f3c0', '', \'" + str(phone) + "\', '0.0015', 'e10adc3949ba59abbe56e057f20f883e', '0', '2010', '', '4', '4', '2015-09-10 17:54:52', '2015-09-18 14:57:37', '', '123456', '123456', '123456', '0', '', '0', '861770969@qq.com', '上海市杨浦区政立路1585弄36号302室', 'd6a0078df5f56793f0fbb5babcc631f5', 'd6a0078df5f56793f0fbb5babcc631f5', '0', '0', '0', '', '1', '2', '2', '1', '2', '-1', '0', '推荐', '', '0', NULL, '', '0', '0', '1', '1')")
+    session.execute("INSERT INTO b_user VALUES (NULL, '6b4f9f85012b304979c94" + str(phone) + "\', '推荐', '1', '1', '汉', '0000-00-00 00:00:00', '2011-02-18 00:00:00', '2031-02-18 00:00:00', '阳江市公安局', '310108197801134859', '上海市杨浦区政立路1585弄36号302室', '', '', '', 'd439b49d158c3424a623c3cc22a4f3c0', '', \'" + str(phone) + "\', '0.0015', '34f85ca80ec353d3052b8a2d3973a0c5', '0', '2010', '', '4', '4', '2015-09-10 17:54:52', '2015-09-18 14:57:37', '', '123456', '123456', '123456', '0', '', '0', '861770969@qq.com', '上海市杨浦区政立路1585弄36号302室', 'd6a0078df5f56793f0fbb5babcc631f5', 'd6a0078df5f56793f0fbb5babcc631f5', '0', '0', '0', '', '1', '2', '2', '1', '2', '1', '0', '推荐', '', '0', NULL, '', '0', '0', '1', '1', '08310001', '2016-04-26 21:46:04', '2')")
     session.commit()
     session.execute("update b_user set client_id = 'kingbroker_6b4f9f85012b304979c94" + str(phone) + "\' where mobilephone = \'" + str(phone) + "\'")
     session.commit()
@@ -1795,6 +1731,26 @@ def random_code(i):
             code += str(chr(random.randint(65, 90)))
     return code
 
+#禁用基准照
+def uncheckmugshot(phone):
+    session = db_session()
+    bid = session.execute("select * from b_user WHERE mobilephone = " + str(phone)).first().bid
+    result = session.execute("select * from b_user_certificate where bid = \'" + str(bid) + "\' and cer_type = '901'").fetchall()
+    if(result != None):
+        session.execute("delete from b_user_certificate where bid = \'" + str(bid) + "\' and cer_type = '901'")
+        session.commit()
+    session.execute("insert into b_user_certificate values(NULL, '" + str(bid) + "', '1', '2016-04-27 12:00:51', '2016-04-27 12:00:51', '901', 'a19bdd967145ce8a7b90dbd1d358d292', NULL)")
+    session.commit()
+    session.close()
+
+#禁用身份证过期提醒
+def uncheckdailymsg_id(phone):
+    session = db_session()
+    bid = session.execute("select * from b_user WHERE mobilephone = " + str(phone)).first().bid
+    session.execute("update b_message set notice = '0' and is_bapp_sync = '1' where b_userid = \'" + str(bid) + "\' and type = '3'")
+    session.commit()
+    session.close()
+
 
 
 
@@ -1815,7 +1771,7 @@ if __name__ == '__main__':
     # insert_buser(15210262172)
     # insert_buser(15210262173)
     #删除Bapp经纪人
-    del_buser(15210262168)
+    # del_buser(15210262168)
     #修改培训时间
     # train_time_start(15313717521)
     # train_time_end(15313717521)
@@ -1879,6 +1835,10 @@ if __name__ == '__main__':
     # print get_current_trade_commission(15210262170)
     #获取本月推荐奖数据
     # print get_current_recommand_info(15210262171)
+    #禁用基准大头照
+    # uncheckmugshot(15210262168)
+    #禁用身份证过期提醒
+    # uncheckdailymsg_id(15210262168)
 
     # uploadid_status(15210262168)
     # approve_id(15210262168)
@@ -1915,4 +1875,4 @@ if __name__ == '__main__':
     # print get_contract_time(15210262168)
     # print cash_count(15210262168)
     # share_relation_status(18611358845)
-    print invite_code(12300000000, 15210262163, 1)
+    # print invite_code(12300000000, 15210262163, 1)

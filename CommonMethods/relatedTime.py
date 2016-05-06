@@ -13,6 +13,7 @@ DEFAULTFOLLOWFORMAT = "%Y-%m-%d %H:%M"
 KPITIMEFORMAT = "%Y%m"
 TRADETIMEFORMAT = "%Y%m%d"
 REPORTTIMEFORMAT = '%Y%m%d'
+REDISFORMAT = '%Y%m%d%H%M%S'
 
 
 def currenttime():
@@ -75,6 +76,11 @@ def tradetime():
 def reporttime():
     now = time.strftime(REPORTTIMEFORMAT, time.localtime(time.time()))
     return now
+
+def redistime():
+    now = time.strftime(REDISFORMAT, time.localtime(time.time()))
+    return now
+
 
 
 
